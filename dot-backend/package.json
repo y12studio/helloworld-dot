@@ -1,0 +1,12 @@
+{
+  "name": "dot-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@polkadot/api": "^2.2.1",
+    "commander": "^6.1.0"
+  },
+  "author": "JOYELIN",
+  "license": "ISC"
+}
