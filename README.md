@@ -32,11 +32,18 @@
 
 # challenge 7
 
-- [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
-
+- [[BEGINNER CHALLENGES] Back-End Javascript | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/13/100023939)
+- [helloworld-dot/dot-backend at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/dot-backend)
 
 # challenge 8
 
-- [[BEGINNER CHALLENGES] Back-End Javascript | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/13/100023939)
+- [[INTERMEDIATE CHALLENGE] Forkless Upgrades | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/6/100023932)
+
+# challenge 9
+
+- [[INTERMEDIATE CHALLENGE] FRAME Development | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/7/100023933)
 
 
+# TODO challenge 
+
+- [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
