@@ -53,7 +53,7 @@
 # challenge 11
 
 - [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
-
+- [helloworld-dot/dot-telemetry at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/dot-telemetry)
 
 # TODO challenge 
 
