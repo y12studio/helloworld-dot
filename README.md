@@ -38,6 +38,7 @@
 # challenge 8
 
 - [[INTERMEDIATE CHALLENGE] Forkless Upgrades | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/6/100023932)
+- [helloworld-dot/forkless-upgrade.png at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/blob/main/forkless-upgrade/forkless-upgrade.png)
 
 # challenge 9
 
