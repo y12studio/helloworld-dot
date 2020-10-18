@@ -6,12 +6,21 @@
 
 use frame_support::{decl_module, decl_storage, decl_event, decl_error, dispatch, traits::Get};
 use frame_system::ensure_signed;
+use frame_support::codec::{Encode, Decode};
+use sp_std::vec::Vec;
 
 #[cfg(test)]
 mod mock;
 
 #[cfg(test)]
 mod tests;
+
+#[derive(Encode, Decode, Default, Clone, PartialEq, Eq, Debug)]
+pub struct UserStruct {
+    username: Vec<u8>,
+    age: u8,
+    active: bool,
+}
 
 /// Configure the pallet by specifying the parameters and types on which it depends.
 pub trait Trait: frame_system::Trait {
@@ -29,6 +38,7 @@ decl_storage! {
 		// Learn more about declaring storage items:
 		// https://substrate.dev/docs/en/knowledgebase/runtime/storage#declaring-storage-items
 		Something get(fn something): Option<u32>;
+		User get(fn user): UserStruct;
 	}
 }
 
@@ -39,6 +49,7 @@ decl_event!(
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		SomethingStored(u32, AccountId),
+		UserStored(UserStruct, AccountId),
 	}
 );
 
@@ -80,6 +91,18 @@ decl_module! {
 			// Return a successful DispatchResult
 			Ok(())
 		}
+
+		#[weight = 10_000 + T::DbWeight::get().writes(1)]
+		pub fn do_user(origin, u: UserStruct) -> dispatch::DispatchResult {
+			let who = ensure_signed(origin)?;
+			// Update storage.
+			User::put(u.clone());
+			// Emit an event.
+			Self::deposit_event(RawEvent::UserStored(u, who));
+			// Return a successful DispatchResult
+			Ok(())
+		}
+
 
 		/// An example dispatchable that may throw a custom error.
 		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
