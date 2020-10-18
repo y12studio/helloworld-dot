@@ -45,8 +45,12 @@
 - [[INTERMEDIATE CHALLENGE] FRAME Development | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/7/100023933)
 - [helloworld-dot/frame-dev at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/frame-dev)
 
+# challenge 10
+
+- [[BEGINNER CHALLENGES] Front-End Javascript | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/14/100023940)
+- [helloworld-dot/dot-frontend at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/dot-frontend)
+
 # TODO challenge 
 
 - [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
-- [[BEGINNER CHALLENGES] Front-End Javascript | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/14/100023940)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
