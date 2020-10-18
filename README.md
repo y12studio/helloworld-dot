@@ -50,7 +50,11 @@
 - [[BEGINNER CHALLENGES] Front-End Javascript | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/14/100023940)
 - [helloworld-dot/dot-frontend at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/dot-frontend)
 
-# TODO challenge 
+# challenge 11
 
 - [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
+
+
+# TODO challenge 
+
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
