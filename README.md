@@ -55,6 +55,12 @@
 - [[BEGINNER CHALLENGE] Run a Kusama or Polkadot node and add it to Telemetry | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
 - [helloworld-dot/dot-telemetry at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/dot-telemetry)
 
+# challenge 12
+
+- [[ECOSYSTEM CHALLENGE] Enable Multi-Currency Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/2/100023952)
+- [helloworld-dot/orml-token at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/orml-token)
+
 # TODO challenge 
 
+- [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
