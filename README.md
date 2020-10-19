@@ -62,5 +62,6 @@
 
 # TODO challenge 
 
+- [[INTERMEDIATE CHALLENGE] Smart contracts - write an ERC-20 smart contract with ink! | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/9/100023935)
 - [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
