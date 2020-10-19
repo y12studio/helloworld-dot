@@ -1,0 +1,6 @@
+{
+    "CurrencyId": "u32",
+    "CurrencyIdOf": "CurrencyId",
+    "Address": "AccountId",
+    "LookupSource": "AccountId"
+  }
