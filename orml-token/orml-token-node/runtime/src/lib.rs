@@ -38,6 +38,9 @@ pub use frame_support::{
 	},
 };
 
+use primitives::{ Amount, AssetId, MyAsset , Balance};
+use orml_currencies::BasicCurrencyAdapter;
+
 /// Import the template pallet.
 pub use pallet_template;
 
@@ -54,9 +57,6 @@ pub type AccountId = <<Signature as Verify>::Signer as IdentifyAccount>::Account
 /// The type for looking up accounts. We don't expect more than 4 billion of them, but you
 /// never know...
 pub type AccountIndex = u32;
-
-/// Balance of an account.
-pub type Balance = u128;
 
 /// Index of a transaction in the chain.
 pub type Index = u32;
@@ -264,6 +264,30 @@ impl pallet_sudo::Trait for Runtime {
 /// Configure the template pallet in pallets/template.
 impl pallet_template::Trait for Runtime {
 	type Event = Event;
+	type OrmlCurrency = Currencies;
+}
+
+impl orml_tokens::Trait for Runtime {
+	type Event = Event;
+	type Balance = Balance;
+	type Amount = Amount;
+	type CurrencyId = AssetId;
+	type OnReceived = ();
+	type WeightInfo = ();
+}
+
+parameter_types! {
+	pub const NativeAssetId: AssetId = MyAsset::NATIVE as AssetId;
+}
+
+pub type AdaptedBasicCurrency = BasicCurrencyAdapter<Runtime, Balances, Amount, Amount>;
+
+impl orml_currencies::Trait for Runtime {
+	type Event = Event;
+	type MultiCurrency = Tokens;
+	type NativeCurrency = AdaptedBasicCurrency;
+	type GetNativeCurrencyId = NativeAssetId;
+	type WeightInfo = ();
 }
 
 // Create the runtime by composing the FRAME pallets that were previously configured.
@@ -283,6 +307,8 @@ construct_runtime!(
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		Tokens: orml_tokens::{ Module, Storage, Call, Config<T>, Event<T>},
+		Currencies: orml_currencies::{ Module, Call, Event<T>},
 	}
 );
 

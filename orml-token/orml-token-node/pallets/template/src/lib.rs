@@ -6,7 +6,8 @@
 
 use frame_support::{decl_module, decl_storage, decl_event, decl_error, dispatch, traits::Get};
 use frame_system::ensure_signed;
-
+use primitives::{AssetId, Amount, Balance};
+use orml_traits::{MultiCurrency, MultiCurrencyExtended};
 #[cfg(test)]
 mod mock;
 
@@ -17,6 +18,10 @@ mod tests;
 pub trait Trait: frame_system::Trait {
 	/// Because this pallet emits events, it depends on the runtime's definition of an event.
 	type Event: From<Event<Self>> + Into<<Self as frame_system::Trait>::Event>;
+
+	// https://github.com/open-web3-stack/open-runtime-module-library/blob/0cb94a5afc2066c919e0c478bb881753574bff6a/traits/src/currency.rs#L50
+	// https://github.com/open-web3-stack/open-runtime-module-library/blob/f278c766d8bcc36b94c0e0c63d1205a4e5351841/currencies/src/lib.rs#L284
+	type OrmlCurrency : MultiCurrencyExtended<Self::AccountId, CurrencyId = AssetId, Balance = Balance, Amount = Amount,>;
 }
 
 // The pallet's runtime storage items.
@@ -39,6 +44,7 @@ decl_event!(
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		SomethingStored(u32, AccountId),
+		Mint(AccountId, AssetId, Balance),
 	}
 );
 
@@ -81,6 +87,14 @@ decl_module! {
 			Ok(())
 		}
 
+		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
+		pub fn orml_token_mint(origin, asset: AssetId, amount: Balance) -> dispatch::DispatchResult {
+			let who = ensure_signed(origin)?;
+			T::OrmlCurrency::deposit(asset, &who, amount)?;
+			Self::deposit_event(RawEvent::Mint(who, asset, amount));
+			Ok(())
+		}
+		
 		/// An example dispatchable that may throw a custom error.
 		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
 		pub fn cause_error(origin) -> dispatch::DispatchResult {
