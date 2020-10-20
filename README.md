@@ -72,8 +72,12 @@
 - [added submission of the erc20 smart contract challenge · y12studio/helloworld-dot@9b33f9a](https://github.com/y12studio/helloworld-dot/commit/9b33f9a4ea0840aceb4a76b4f3f839f51e56ee08)
 - [helloworld-dot/erc20-ink at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/erc20-ink)
 
+# challenge 15
+
+- [[ECOSYSTEM CHALLENGE] (Beginner) Build and Run a Local Phala Network | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/1/100023945)
+- [helloworld-dot/phala/local-phala at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/phala/local-phala)
+
 # TODO challenge 
 
 - [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
-- [[ECOSYSTEM CHALLENGE] (Beginner) Build and Run a Local Phala Network | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/1/100023945)
