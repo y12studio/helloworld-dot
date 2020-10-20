@@ -24,7 +24,7 @@ export default function Main (props) {
   const { addressTo, amount } = formState;
 
   const handleClick = async () => {
-    console.log("account pair", accountPair)
+    //console.log("account pair", accountPair)
     const { address } = accountPair
     const value = await y12Token.tx
       .transfer( 0, DefaultGasLimit, addressTo, amount)
