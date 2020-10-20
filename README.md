@@ -60,6 +60,11 @@
 - [[ECOSYSTEM CHALLENGE] Enable Multi-Currency Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/2/100023952)
 - [helloworld-dot/orml-token at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/orml-token)
 
+# challenge 13
+
+- [[ECOSYSTEM CHALLENGE] Using Remix and MetaMask on Moonbeam | PureStake Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/PureStake/gitcoin-hello-world-by-moonbeam/3/100023962)
+- 
+
 # TODO challenge 
 
 - [[INTERMEDIATE CHALLENGE] Smart contracts - write an ERC-20 smart contract with ink! | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/9/100023935)
