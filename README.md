@@ -76,3 +76,4 @@
 
 - [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
+- [[ECOSYSTEM CHALLENGE] (Beginner) Build and Run a Local Phala Network | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/1/100023945)
