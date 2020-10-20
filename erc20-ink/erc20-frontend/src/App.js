@@ -61,12 +61,12 @@ function Main () {
             <BlockNumber />
             <BlockNumber finalized />
           </Grid.Row>
-          <Grid.Row stretched>
-            <Balances />
-          </Grid.Row>
           <Grid.Row>
             <Transfer accountPair={accountPair} />
             <Upgrade accountPair={accountPair} />
+          </Grid.Row>
+          <Grid.Row stretched>
+            <Balances />
           </Grid.Row>
           <Grid.Row>
             <Interactor accountPair={accountPair} />

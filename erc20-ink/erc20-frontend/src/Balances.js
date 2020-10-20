@@ -2,11 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { Table, Grid, Button } from 'semantic-ui-react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useSubstrate } from './substrate-lib';
+import metadata from './ERC20Mtadata.json';
+import { Abi, ContractPromise } from '@polkadot/api-contract';
+
+const DefaultGasLimit = 300000n * 1000000n;
+const TokenContractAddress = '5CtA447RarL817AQKwgatEJ1ByoMbebkmC5SGxVMGxVsTZJX';
+const abi = new Abi(metadata);
 
 export default function Main (props) {
   const { api, keyring } = useSubstrate();
   const accounts = keyring.getPairs();
   const [balances, setBalances] = useState({});
+
+  const y12Token = new ContractPromise(api, abi, TokenContractAddress);
+
+  async function updateBalances (addresses) {
+    const r = {};
+    await Promise.all(addresses.map( async (address) => {
+      const q = await y12Token.query.balanceOf(address, 0, DefaultGasLimit, address);
+      r[address] = q.output.toNumber();
+    }));
+    setBalances(r);
+  }
 
   useEffect(() => {
     const addresses = keyring.getPairs().map(account => account.address);
@@ -14,10 +31,7 @@ export default function Main (props) {
 
     api.query.system.account
       .multi(addresses, balances => {
-        const balancesMap = addresses.reduce((acc, address, index) => ({
-          ...acc, [address]: balances[index].data.free.toHuman()
-        }), {});
-        setBalances(balancesMap);
+        updateBalances(addresses);
       }).then(unsub => {
         unsubscribeAll = unsub;
       }).catch(console.error);
@@ -27,7 +41,7 @@ export default function Main (props) {
 
   return (
     <Grid.Column>
-      <h1>Balances</h1>
+      <h1>ERC20 Y12Token Balances</h1>
       <Table celled striped size='small'>
         <Table.Body>{accounts.map(account =>
           <Table.Row key={account.address}>
