@@ -63,10 +63,16 @@
 # challenge 13
 
 - [[ECOSYSTEM CHALLENGE] Using Remix and MetaMask on Moonbeam | PureStake Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/PureStake/gitcoin-hello-world-by-moonbeam/3/100023962)
-- 
+- [[ECOSYSTEM CHALLENGE] Using Remix And MetaMask On Moonbeam · Issue #1 · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/issues/1)
+- [helloworld-dot/moonbeam-erc20 at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/moonbeam-erc20)
+
+# challenge 14
+
+- [[INTERMEDIATE CHALLENGE] Smart contracts - write an ERC-20 smart contract with ink! | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/9/100023935)
+- [added submission of the erc20 smart contract challenge · y12studio/helloworld-dot@9b33f9a](https://github.com/y12studio/helloworld-dot/commit/9b33f9a4ea0840aceb4a76b4f3f839f51e56ee08)
+- [helloworld-dot/erc20-ink at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/erc20-ink)
 
 # TODO challenge 
 
-- [[INTERMEDIATE CHALLENGE] Smart contracts - write an ERC-20 smart contract with ink! | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/9/100023935)
 - [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
