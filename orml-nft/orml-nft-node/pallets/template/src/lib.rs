@@ -7,6 +7,8 @@
 use frame_support::{decl_module, decl_storage, decl_event, decl_error, dispatch, traits::Get};
 use frame_system::ensure_signed;
 
+use sp_runtime::{ traits::StaticLookup, DispatchError, DispatchResult };
+
 #[cfg(test)]
 mod mock;
 
@@ -14,7 +16,7 @@ mod mock;
 mod tests;
 
 /// Configure the pallet by specifying the parameters and types on which it depends.
-pub trait Trait: frame_system::Trait {
+pub trait Trait: frame_system::Trait + orml_nft::Trait {
 	/// Because this pallet emits events, it depends on the runtime's definition of an event.
 	type Event: From<Event<Self>> + Into<<Self as frame_system::Trait>::Event>;
 }
@@ -35,10 +37,16 @@ decl_storage! {
 // Pallets use events to inform users when important changes are made.
 // https://substrate.dev/docs/en/knowledgebase/runtime/events
 decl_event!(
-	pub enum Event<T> where AccountId = <T as frame_system::Trait>::AccountId {
+	pub enum Event<T> where 
+		AccountId = <T as frame_system::Trait>::AccountId, 
+		ClassId = <T as orml_nft::Trait>::ClassId,
+		TokenId = <T as orml_nft::Trait>::TokenId {
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		SomethingStored(u32, AccountId),
+		OrmlNftClassCreated(AccountId, ClassId),
+		OrmlNftTokenMinted(AccountId, TokenId),
+		OrmlNftTokenTransferred(AccountId, AccountId, ClassId, TokenId),
 	}
 );
 
@@ -78,6 +86,42 @@ decl_module! {
 			// Emit an event.
 			Self::deposit_event(RawEvent::SomethingStored(something, who));
 			// Return a successful DispatchResult
+			Ok(())
+		}
+
+		// 
+		// "CID": "Vec<u8>"
+		// https://github.com/open-web3-stack/open-runtime-module-library/blob/f278c766d8bcc36b94c0e0c63d1205a4e5351841/nft/src/lib.rs#L34
+		// 
+		// "ClassData": "u32"
+		// "TokenData": "u32"
+		// https://github.com/open-web3-stack/open-runtime-module-library/blob/f278c766d8bcc36b94c0e0c63d1205a4e5351841/nft/src/lib.rs#L66
+		// 
+		// "ClassId": "u64"
+		// "TokenId": "u64"
+		// https://github.com/open-web3-stack/open-runtime-module-library/blob/f278c766d8bcc36b94c0e0c63d1205a4e5351841/nft/src/lib.rs#L62
+		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
+		pub fn create_nft_class(origin, class_metadata: orml_nft::CID, class_data : <T as orml_nft::Trait>::ClassData) -> dispatch::DispatchResult {
+			let who = ensure_signed(origin)?;
+			let r: Result<T::ClassId, DispatchError> = orml_nft::Module::<T>::create_class(&who, class_metadata, class_data);
+			Self::deposit_event(RawEvent::OrmlNftClassCreated(who, r.unwrap()));
+			Ok(())
+		}
+
+		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
+		pub fn mint_nft_token(origin, class_id: T::ClassId, metadata: orml_nft::CID, data: <T as orml_nft::Trait>::TokenData) -> dispatch::DispatchResult {
+			let who = ensure_signed(origin)?;
+			let r: Result<T::TokenId, DispatchError> = orml_nft::Module::<T>::mint(&who, class_id, metadata, data);
+			Self::deposit_event(RawEvent::OrmlNftTokenMinted(who, r.unwrap()));
+			Ok(())
+		}
+		
+		#[weight = 10_000 + T::DbWeight::get().reads_writes(1,1)]
+		pub fn nft_transfer(origin, dest: <T::Lookup as StaticLookup>::Source, token_class_id: T::ClassId, token_id: T::TokenId) -> DispatchResult {
+			let who = ensure_signed(origin)?;
+			let to: T::AccountId = T::Lookup::lookup(dest)?;
+			let _r = orml_nft::Module::<T>::transfer(&who, &to, (token_class_id, token_id));
+			Self::deposit_event(RawEvent::OrmlNftTokenTransferred(who, to, token_class_id, token_id));
 			Ok(())
 		}
 

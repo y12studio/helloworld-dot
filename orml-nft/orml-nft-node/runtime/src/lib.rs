@@ -38,6 +38,8 @@ pub use frame_support::{
 	},
 };
 
+pub use orml_nft;
+
 /// Import the template pallet.
 pub use pallet_template;
 
@@ -92,11 +94,11 @@ pub mod opaque {
 }
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("node-template"),
-	impl_name: create_runtime_str!("node-template"),
+	spec_name: create_runtime_str!("y12studio"),
+	impl_name: create_runtime_str!("y12studio"),
 	authoring_version: 1,
-	spec_version: 1,
-	impl_version: 1,
+	spec_version: 20,
+	impl_version: 10,
 	apis: RUNTIME_API_VERSIONS,
 	transaction_version: 1,
 };
@@ -261,6 +263,14 @@ impl pallet_sudo::Trait for Runtime {
 	type Call = Call;
 }
 
+
+impl orml_nft::Trait for Runtime {
+	type ClassId = u64;
+	type TokenId = u64;
+	type ClassData = u32;
+	type TokenData = u32;
+}
+
 /// Configure the template pallet in pallets/template.
 impl pallet_template::Trait for Runtime {
 	type Event = Event;
@@ -282,7 +292,8 @@ construct_runtime!(
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
-		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		Y12StudioNFT: pallet_template::{Module, Call, Storage, Event<T>},
+		OrmlNFT: orml_nft::{Module, Storage},
 	}
 );
 
