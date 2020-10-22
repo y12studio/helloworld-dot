@@ -43,7 +43,7 @@ pub fn development_config() -> Result<ChainSpec, String> {
 
 	Ok(ChainSpec::from_genesis(
 		// Name
-		"Development",
+		"MultisigDev",
 		// ID
 		"dev",
 		ChainType::Development,
