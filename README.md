@@ -79,16 +79,23 @@
 
 # challenge 16
 
-- [[ECOSYSTEM CHALLENGE] (Advanced) Build the First Confidential Contract | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/2/100023947)
-- [helloworld-dot/phala/contract-red at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/phala/contract-red)
+- [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
+- [helloworld-dot/orml-nft at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/orml-nft)
 
 # challenge 17
 
-- [[ECOSYSTEM CHALLENGE] Enable NFT Support | AcalaNetwork Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/AcalaNetwork/polakdot-hello-world-acala/1/100023951)
+- [[ECOSYSTEM CHALLENGE] Deploy on Moonbase Alpha using Truffle | PureStake Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/PureStake/gitcoin-hello-world-by-moonbeam/1/100023953)
+- [helloworld-dot/moonbeam-erc20 at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/moonbeam-erc20)
 
 # challenge 18
 
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
+- [helloworld-dot/multisig at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/multisig)
+
+# challenge 19
+
+- [[ECOSYSTEM CHALLENGE] (Advanced) Build the First Confidential Contract | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/2/100023947)
+- [helloworld-dot/phala/contract-red at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/phala/contract-red)
 
  
 
