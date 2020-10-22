@@ -98,4 +98,14 @@
 - [helloworld-dot/phala/contract-red at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/phala/contract-red)
 
  
+# challenge 20
 
+- [[INTERMEDIATE CHALLENGE] Deploying An Auction Solidity Contract on Plasm Network | staketechnologies Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/staketechnologies/hello-world-by-polkadot/5/100023959)
+
+# challenge 21
+
+[[ADVANCED CHALLENGE] REST APIs - Read an account's pending payouts | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/5/100023931)
+
+# extra prize
+
+[[EXTRA PRIZE] Complete 18 or more challenges - 150 DOT for the first 50 valid submissions | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/18/100023944)
