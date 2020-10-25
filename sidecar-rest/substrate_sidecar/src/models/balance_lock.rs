@@ -38,10 +38,10 @@ impl BalanceLock {
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Reasons {
     #[serde(rename = "Fee = 0")]
-    Fee__0,
+    Fee0,
     #[serde(rename = "Misc = 1")]
-    Misc__1,
+    Misc1,
     #[serde(rename = "All = 2")]
-    All__2,
+    All2,
 }
 

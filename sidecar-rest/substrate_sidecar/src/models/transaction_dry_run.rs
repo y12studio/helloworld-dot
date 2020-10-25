@@ -53,7 +53,7 @@ pub enum Result {
     #[serde(rename = "NoUnsignedValidator")]
     NoUnsignedValidator,
     #[serde(rename = "Custom(u8)")]
-    Custom_u8,
+    Customu8,
     #[serde(rename = "Call")]
     Call,
     #[serde(rename = "Payment")]
