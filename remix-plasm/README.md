@@ -1,5 +1,6 @@
 [[INTERMEDIATE CHALLENGE] Deploying An Auction Solidity Contract on Plasm Network | staketechnologies Funded Issue Detail | Gitcoin ](https://gitcoin.co/issue/staketechnologies/hello-world-by-polkadot/5/100023959)
 
+
 ## 1. Start local plasm-node:1.6.1-dusty with evm=debug
 
 ```sh
@@ -7,13 +8,7 @@ $ docker run -it -p 9933:9933 staketechnologies/plasm-node:1.6.1-dusty --dev -l 
 
 ```
 
-## 2. Start local remix ide
-
-```sh
-$ docker run -it -p 8080:80 remixproject/remix-ide:latest
-```
-
-## 3. Add new plasm-dev network to Metamask and import plasm dusty node developer account
+## 2. Add new plasm-dev network to Metamask and import developer account
 
 developer account seed
 
@@ -21,9 +16,25 @@ developer account seed
 0x60ed0dd24087f00faea4e2b556c74ebfa2f0e705f8169733b01530ce4c619883
 ```
 
-## 4. Deploy auction contract
+## 3. Test the auction contract
+
+- account-dev transfer 100 PLM to account1/account2/account3
+- account-dev deploy auctionn contract with 120 seconds bidding time on behalf of the beneficiary account3 address. (NOTE: [pallet-evm: fix backend timestamp by sorpaas · Pull Request #7245 · paritytech/substrate](https://github.com/paritytech/substrate/pull/7245))
+- account1 bid 10 PLM 
+- account2 bid 20 PLM
+- It takes about 120 seconds to wait for the auction to complete
+- account3 call auctionEnd
+- account1 withdraw 10 PLM
+
+## 4. Upload the Video
+
+[Deploying An Auction Solidity Contract on Plasm Network - YouTube](https://www.youtube.com/watch?v=8lF4c87W3Mo&feature=youtu.be)
+
+
+## auction contract
 
 [Solidity by Example — Solidity 0.6.12 documentation](https://solidity.readthedocs.io/en/v0.6.12/solidity-by-example.html#simple-open-auction)
+
 
 ```
 // SPDX-License-Identifier: GPL-3.0
@@ -114,14 +125,3 @@ contract SimpleAuction {
     }
 }
 ```
-
-test the deployed auction contract
-
-- account-dev deploy auctionn contract with 300 seconds bidding time on behalf of the beneficiary account-dev address. (NOTE: [pallet-evm: fix backend timestamp by sorpaas · Pull Request #7245 · paritytech/substrate](https://github.com/paritytech/substrate/pull/7245))
-- account-dev transfer 100 PLM to account1/account2
-- account1 bid 1 PLM 
-- account2 bid 2 PLM
-- account1 withdraw 1 PLM
-- account-dev call auctionEnd()
-
-
