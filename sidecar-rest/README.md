@@ -56,7 +56,6 @@ $ target/release/pending-payouts -a DTLcUu92NoQw4gg6VmNgXeYQiNywDhfYMQBPYg2Y1W6A
 account_id: DTLcUu92NoQw4gg6VmNgXeYQiNywDhfYMQBPYg2Y1W6AkJF
 depth: 14
 era: 1443
-669970599257
 pending payout(Planck): 669970599257
 pending payout(KSM): 0.669970599257
 ```

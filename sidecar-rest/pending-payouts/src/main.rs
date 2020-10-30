@@ -49,7 +49,7 @@ async fn get_pending_payouts(account_id: String, depth: String , era: String) ->
             }
         }
     }
-    println!("{:?}", total_payout);
+    // println!("{:?}", total_payout);
     Ok(total_payout)
 }
 
