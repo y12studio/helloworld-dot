@@ -1,0 +1,23 @@
+{
+  "name": "multisig-cli",
+  "version": "0.0.1",
+  "description": "multisig-cli",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index start"
+  },
+  "author": "y12studio@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@polkadot/api": "^2.4.1",
+    "@polkadot/keyring": "^3.6.1",
+    "@polkadot/util-crypto": "^3.6.1",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0"
+  }
+}
