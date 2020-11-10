@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Form, Dropdown, Input, Label } from 'semantic-ui-react';
+import { Grid, Form, Dropdown, Input, Label, Button } from 'semantic-ui-react';
 
 import { useSubstrate } from './substrate-lib';
 import { TxButton, TxGroupButton } from './substrate-lib/components';
+import { ApiClient, TransactionApi } from 'sidecar-js';
 
 const argIsOptional = (arg) =>
   arg.type.toString().startsWith('Option<');
@@ -53,6 +54,16 @@ function Main (props) {
       .map(c => ({ key: c, value: c, text: c }));
     setCallables(callables);
   };
+
+  const feeEstimateTransaction = async () => {
+        const transaction = await api.tx[palletRpc][callable](...inputParams);
+        console.log(transaction.toHex());
+        let sidecar = new ApiClient();
+        sidecar.basePath = 'http://localhost:8080'
+        let txapi = new TransactionApi(sidecar);
+        //let xx = await txapi.feeEstimateTransaction(transaction.toHex());
+        //console.log(xx);
+    };
 
   const updateParamFields = () => {
     if (!api || palletRpc === '' || callable === '') {
@@ -232,6 +243,9 @@ function Main (props) {
           </Form.Field>
         )}
         <Form.Field style={{ textAlign: 'center' }}>
+          <Button onClick={feeEstimateTransaction}>
+            Estimate Fee 
+          </Button>
           <InteractorSubmit
             accountPair={accountPair}
             setStatus={setStatus}

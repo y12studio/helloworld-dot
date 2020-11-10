@@ -7,11 +7,20 @@ Submission requirements
 - Use Sidecar’s estimate fee functionality if estimating fee, or send to live chain (via Sidecar or directly) otherwise
 - Upload all the code to Github and submit the URL. For bonus points, upload the solution live somewhere so it can be tested publicly.
 
-
 To generate [javascript](https://openapi-generator.tech/docs/generators/javascript) with [OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator)
 
 ```
 $ wget https://raw.githubusercontent.com/paritytech/substrate-api-sidecar/master/docs/src/openapi-v1.yaml
 $ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -i /local/openapi-v1.yaml -g javascript --additional-properties=usePromises=true -o /local/sidecar-js
+$ cd sidecar-js
+$ yarn build
 ```
+
+fee estimator
+
+```
+$ cd substrate-frontend
+$ yarn start
+```
+
