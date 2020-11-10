@@ -14,6 +14,7 @@ import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
 import Transfer from './Transfer';
+import MultisigTransfer from './MultisigTransfer';
 import Upgrade from './Upgrade';
 
 function Main () {
@@ -66,7 +67,7 @@ function Main () {
           </Grid.Row>
           <Grid.Row>
             <Transfer accountPair={accountPair} />
-            <Upgrade accountPair={accountPair} />
+            <MultisigTransfer accountPair={accountPair} />
           </Grid.Row>
           <Grid.Row>
             <Interactor accountPair={accountPair} />

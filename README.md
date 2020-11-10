@@ -100,19 +100,12 @@
 - [helloworld-dot/remix-plasm at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/remix-plasm)
 
 
-# [WIP] challenge 20
+# challenge 20
 
 - [[INTERMEDIATE CHALLENGE] FRAME Multisig | Polkadot-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/8/100023934)
 - [helloworld-dot/multisig at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/multisig)
 
-# [WIP] extra prize
+# extra prize
 
 - [[EXTRA PRIZE] Complete 18 or more challenges - 150 DOT for the first 50 valid submissions | Polkadot-Network Funded Issue Detail | Gitcoin](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/18/100023944)
 - [y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot)
-
-# [WIP] challenge 21
-
-- [[ECOSYSTEM CHALLENGE] (Advanced) Build the First Confidential Contract | Phala-Network Funded Issue Detail | Gitcoin | Gitcoin](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/2/100023947)
-- [helloworld-dot/phala/contract-red at main · y12studio/helloworld-dot](https://github.com/y12studio/helloworld-dot/tree/main/phala/contract-red)
-
-
