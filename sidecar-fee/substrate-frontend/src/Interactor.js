@@ -3,7 +3,7 @@ import { Grid, Form, Dropdown, Input, Label, Button } from 'semantic-ui-react';
 
 import { useSubstrate } from './substrate-lib';
 import { TxButton, TxGroupButton } from './substrate-lib/components';
-import { ApiClient, TransactionApi } from 'sidecar-js';
+import { ApiClient, TransactionApi } from './sidecar-api';
 
 const argIsOptional = (arg) =>
   arg.type.toString().startsWith('Option<');
@@ -57,12 +57,13 @@ function Main (props) {
 
   const feeEstimateTransaction = async () => {
         const transaction = await api.tx[palletRpc][callable](...inputParams);
-        console.log(transaction.toHex());
         let sidecar = new ApiClient();
         sidecar.basePath = 'http://localhost:8080'
         let txapi = new TransactionApi(sidecar);
-        //let xx = await txapi.feeEstimateTransaction(transaction.toHex());
-        //console.log(xx);
+        let result = await txapi.feeEstimateTransaction(
+          {tx: transaction.toHex()}
+        );
+        console.log(result);
     };
 
   const updateParamFields = () => {
