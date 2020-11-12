@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Form, Dropdown, Input, Label, Button } from 'semantic-ui-react';
+import { Grid, Form, Dropdown, Input, Label, Button, Icon } from 'semantic-ui-react';
 
 import { useSubstrate } from './substrate-lib';
 import { TxButton, TxGroupButton } from './substrate-lib/components';
@@ -8,7 +8,7 @@ import { ApiClient, TransactionApi } from './sidecar-api';
 const argIsOptional = (arg) =>
   arg.type.toString().startsWith('Option<');
 
-function Main (props) {
+function Main(props) {
   const { api, jsonrpc } = useSubstrate();
   const { accountPair } = props;
   const [status, setStatus] = useState(null);
@@ -17,6 +17,7 @@ function Main (props) {
   const [palletRPCs, setPalletRPCs] = useState([]);
   const [callables, setCallables] = useState([]);
   const [paramFields, setParamFields] = useState([]);
+  const [estimateFee, setEstimateFee] = useState(null);
 
   const initFormState = {
     palletRpc: '',
@@ -56,15 +57,22 @@ function Main (props) {
   };
 
   const feeEstimateTransaction = async () => {
-        const transaction = await api.tx[palletRpc][callable](...inputParams);
-        let sidecar = new ApiClient();
-        sidecar.basePath = 'http://localhost:8080'
-        let txapi = new TransactionApi(sidecar);
-        let result = await txapi.feeEstimateTransaction(
-          {tx: transaction.toHex()}
-        );
-        console.log(result);
-    };
+    const txTarget = await api.tx[palletRpc][callable](...inputParams);
+    console.log(txTarget.toHuman());
+    console.log(txTarget.method);
+    console.log(txTarget.method.toHex());
+    console.log(txTarget.toHex());
+    const sidecar = new ApiClient();
+    sidecar.basePath = 'http://localhost:8080';
+    const txapi = new TransactionApi(sidecar);
+    const result = await txapi.feeEstimateTransaction(
+      { tx: txTarget.toHex() }
+    );
+    // console.log(result);
+    if (result && result.partialFee) {
+      setEstimateFee(result.partialFee);
+    }
+  };
 
   const updateParamFields = () => {
     if (!api || palletRpc === '' || callable === '') {
@@ -229,15 +237,15 @@ function Main (props) {
               type='text'
               label={paramField.name}
               state={{ ind, paramField }}
-              value={ inputParams[ind] ? inputParams[ind].value : '' }
+              value={inputParams[ind] ? inputParams[ind].value : ''}
               onChange={onPalletCallableParamChange}
             />
-            { paramField.optional
+            {paramField.optional
               ? <Label
                 basic
                 pointing
                 color='teal'
-                content = { getOptionalMsg(interxType) }
+                content={getOptionalMsg(interxType)}
               />
               : null
             }
@@ -245,7 +253,7 @@ function Main (props) {
         )}
         <Form.Field style={{ textAlign: 'center' }}>
           <Button onClick={feeEstimateTransaction}>
-            Estimate Fee 
+            Estimate Fee
           </Button>
           <InteractorSubmit
             accountPair={accountPair}
@@ -253,34 +261,42 @@ function Main (props) {
             attrs={{ interxType, palletRpc, callable, inputParams, paramFields }}
           />
         </Form.Field>
+        {estimateFee ? (
+          <Label basic color="teal">
+            <Icon name=" money bill alternate" />
+            Total fee is <b>{estimateFee}</b> Planck
+          </Label>
+        ) : (
+            <div></div>
+          )}
         <div style={{ overflowWrap: 'break-word' }}>{status}</div>
       </Form>
     </Grid.Column>
   );
 }
 
-function InteractorSubmit (props) {
+function InteractorSubmit(props) {
   const { attrs: { interxType } } = props;
   if (interxType === 'QUERY') {
     return <TxButton
-      label = 'Query'
-      type = 'QUERY'
-      color = 'blue'
+      label='Query'
+      type='QUERY'
+      color='blue'
       {...props}
     />;
   } else if (interxType === 'EXTRINSIC') {
     return <TxGroupButton {...props} />;
   } else if (interxType === 'RPC' || interxType === 'CONSTANT') {
     return <TxButton
-      label = 'Submit'
-      type = {interxType}
-      color = 'blue'
+      label='Submit'
+      type={interxType}
+      color='blue'
       {...props}
     />;
   }
 }
 
-export default function Interactor (props) {
+export default function Interactor(props) {
   const { api } = useSubstrate();
   return api.tx ? <Main {...props} /> : null;
 }

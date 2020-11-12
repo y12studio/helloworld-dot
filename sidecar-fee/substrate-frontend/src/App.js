@@ -10,7 +10,7 @@ import AccountSelector from './AccountSelector';
 import Balances from './Balances';
 import BlockNumber from './BlockNumber';
 import Events from './Events';
-import Interactor from './Interactor';
+import FeeEstimator from './FeeEstimator';
 import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
@@ -62,16 +62,16 @@ function Main () {
             <BlockNumber />
             <BlockNumber finalized />
           </Grid.Row>
+          <Grid.Row>
+            <FeeEstimator accountPair={accountPair} />
+            <Events />
+          </Grid.Row>
           <Grid.Row stretched>
             <Balances />
           </Grid.Row>
           <Grid.Row>
             <Transfer accountPair={accountPair} />
             <Upgrade accountPair={accountPair} />
-          </Grid.Row>
-          <Grid.Row>
-            <Interactor accountPair={accountPair} />
-            <Events />
           </Grid.Row>
           <Grid.Row>
             <TemplateModule accountPair={accountPair} />
